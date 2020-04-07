@@ -13,11 +13,13 @@ Each of the optimisation can be run with a command 'dakota -i *.in' after instal
 1. Preparation:
 
 1.1 Install necessary packages
+
 sudo apt-get install gcc g++ gfortran cmake cmake-curses-gui libboost-dev libboost-all-dev libblas-dev liblapack-dev libopenmpi-dev openmpi-bin openmpi-doc xorg-dev libmotif-dev
 
 Note: Installation of GNU, CMake, Boost, libblas, liblapack, Openmpi, xwindows, Python
 
 1.2 Download DAKOTA source code on website
+
 cd ~
 mkdir DAKOTA
 cd DAKOTA
@@ -25,6 +27,7 @@ wget https://dakota.sandia.gov/sites/default/files/distributions/public/dakota-6
 tar -xzf dakota-6.10-release-public.src.tar.gz 
 
 1.3 create the build and installation folder
+
 mkdir dakota_build
 mkdir dakota_installation
 export DAK_BUILD=$HOME/DAKOTA/dakota_build
@@ -53,6 +56,7 @@ set( MPI_CXX_INCLUDE_PATH
 2. Building
 
 2.1 Run Cmake
+
 ccmake -C $DAK_SRC/cmake/BuildDakotaCustom.cmake $DAK_SRC -DCMAKE_INSTALL_PREFIX=$DAK_INSTALL 
 
 Note:
@@ -63,12 +67,14 @@ All finish, press “c” again to configure all scripts. If no error appears, y
 Finally press “g” to start generating the configuration.
 
 2.2 Run make
+
 make -j4
 Note: that's to compile in parallel with 4 processors
 make install
 
 3. Path and Test
 3.1 Add path
+
 gedit ~/.bashrc
 
 Note: add the following lines to .bashrc
@@ -77,6 +83,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/DAKOTA/dakota_installation/bin:~/DAKOT
 export PYTHONPATH=$PYTHONPATH:~/DAKOTA/dakota_installation/share/dakota/Python
 
 3.2 Test build
+
 dakota -v
 If the screen show the version and build date, the job is finished!
 
