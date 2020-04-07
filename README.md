@@ -73,6 +73,7 @@ Note: that's to compile in parallel with 4 processors
 make install
 
 3. Path and Test
+
 3.1 Add path
 
 gedit ~/.bashrc
