@@ -69,6 +69,7 @@ Finally press “g” to start generating the configuration.
 2.2 Run make
 
 make -j4
+
 make install
 
 Note: that's to compile in parallel with 4 processors
@@ -82,9 +83,9 @@ gedit ~/.bashrc
 
 Note: add the following lines to .bashrc
 
-export PATH=$PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/test
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/lib
-export PYTHONPATH=$PYTHONPATH:~/DAKOTA/dakota_installation/share/dakota/Python
+export PATH=$PATH: ~/DAKOTA/dakota_installation/bin: ~/DAKOTA/dakota_installation/test
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH: ~/DAKOTA/dakota_installation/bin: ~/DAKOTA/dakota_installation/lib
+export PYTHONPATH=$PYTHONPATH: ~/DAKOTA/dakota_installation/share/dakota/Python
 
 3.2 Test build
 
