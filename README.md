@@ -11,6 +11,7 @@ Each of the optimisation can be run with a command 'dakota -i *.in' after instal
 # A guidance for installing Dakota with compiling from source(in Ubuntu system)
 
 1. Preparation:
+
 1.1 Install necessary packages
 sudo apt-get install gcc g++ gfortran cmake cmake-curses-gui libboost-dev libboost-all-dev libblas-dev liblapack-dev libopenmpi-dev openmpi-bin openmpi-doc xorg-dev libmotif-dev
 
@@ -50,6 +51,7 @@ set( MPI_CXX_INCLUDE_PATH
 "/path/to/MPI/include" can be found with command: mpicxx --showme, for example, on my Desktop, the path is "/usr/lib/x86_64-linux-gnu/openmpi/include"
 
 2. Building
+
 2.1 Run Cmake
 ccmake -C $DAK_SRC/cmake/BuildDakotaCustom.cmake $DAK_SRC -DCMAKE_INSTALL_PREFIX=$DAK_INSTALL 
 
