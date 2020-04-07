@@ -8,7 +8,7 @@ This repository is a reference for interfacing Dakota with a python code for opt
 
 Each of the optimisation can be run with a command 'dakota -i *.in' after installation of Dakota.
 
-**A guidance for installing Dakota with compiling from source(in Ubuntu system)
+#A guidance for installing Dakota with compiling from source(in Ubuntu system)
 
 1. Preparation:
 1.1 Install necessary packages
@@ -31,7 +31,8 @@ export DAK_INSTALL=$HOME/DAKOTA/dakota_installation
 export DAK_SRC=$HOME/DAKOTA/dakota-6.10.0.src
 cd $DAK_BUILD 
 
-# if no parallel computing is needed, skip step 1.4 and 1.5.
+**if no parallel computing is needed, skip step 1.4 and 1.5.
+
 1.4 Copy file BuildDakotaTemplate.cmake and rename it to BuildDakotaCustom.cmake. You can edit some features if you want, check the content inside for details.
 (Note: the modification will be based on BuildDakotaCustom.cmake, so the source code won't be damaged)
 cp $DAK_SRC/cmake/BuildDakotaTemplate.cmake $DAK_SRC/cmake/BuildDakotaCustom.cmake 
