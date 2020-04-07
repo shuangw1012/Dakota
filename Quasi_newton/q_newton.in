@@ -1,0 +1,37 @@
+# Demonstrate Dakota script interface to Python analysis (Rosenbrock)
+environment
+## Activate Dakota's legacy X Windows-based graphics on Unix systems
+## Consider newer capabilities in the Dakota GUI
+  #graphics
+  tabular_data
+    tabular_data_file = 'opt.dat'
+method,						
+	optpp_q_newton		
+	convergence_tolerance = 1e-4
+
+variables,					
+	continuous_design = 2			
+	  cdv_initial_point  -1.2  1.0		
+	  cdv_lower_bounds   -2.0 -2.0		
+	  cdv_upper_bounds    2.0  2.0		
+	  cdv_descriptor      'x1' 'x2'
+
+interface,							
+	fork							
+	  analysis_drivers = 'rosenbrock_bb_di.py'
+	parameters_file = 'params.in'
+	results_file = 'results.out'
+	work_directory directory_tag
+	file_tag
+	file_save
+#	aprepro
+
+responses,				
+	num_objective_functions = 1	
+	#nonlinear_equality_constraints = 1
+	#analytic_gradients
+	numerical_gradients
+	    method_source dakota
+	    interval_type central
+	    fd_step_size = 1.e-4		
+	no_hessians

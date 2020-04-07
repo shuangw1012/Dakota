@@ -1,0 +1,51 @@
+# Demonstrate Dakota script interface to Python analysis (Rosenbrock)
+environment
+## Activate Dakota's legacy X Windows-based graphics on Unix systems
+## Consider newer capabilities in the Dakota GUI
+  #graphics
+  tabular_data
+    tabular_data_file = 'opt.dat'
+
+method
+	soga
+	  seed = 10983
+	max_function_evaluations = 2000
+	initialization_type unique_random
+	#print_each_pop
+	crossover_type shuffle_random
+	  num_offspring = 2 num_parents = 2
+	  crossover_rate = 0.8
+	mutation_type replace_uniform
+	  mutation_rate = 0.2
+	fitness_type merit_function
+	replacement_type elitist
+	convergence_type average_fitness_tracker
+	  percent_change = 0.05 num_generations = 40
+	output silent
+
+model
+	single
+
+variables
+	continuous_design = 2
+	  initial_point     0.0      0.0
+	  lower_bounds     -2.0     -2.0
+	  upper_bounds      2.0      2.0
+	  descriptors       'x1'     "x2"
+
+
+interface,							
+	fork							
+	  analysis_drivers = 'rosenbrock_bb_di.py'
+	parameters_file = 'params.in'
+	results_file = 'results.out'
+	work_directory directory_tag
+	file_tag
+	file_save
+#	aprepro
+
+responses,				
+	num_objective_functions = 1	
+	#nonlinear_equality_constraints = 1
+	no_gradients	
+	no_hessians
