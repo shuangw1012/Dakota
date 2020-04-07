@@ -6,7 +6,7 @@ This repository is a reference for interfacing Dakota with a python code for opt
 2. a derivative-free local optimisation: Pattern Search Method
 3. a derivative-free global optimisation: Genetic algorithm
 
-Each of the optimisation can be run with a command 'dakota -i *.in' after installation of Dakota.
+A rosenbrock function is used to test the capability of the methods. Each of the optimisation can be run with a command 'dakota -i *.in' after installation of Dakota.
 
 # A guidance for installing Dakota with compiling from source(in Ubuntu system)
 
@@ -69,8 +69,10 @@ Finally press “g” to start generating the configuration.
 2.2 Run make
 
 make -j4
-Note: that's to compile in parallel with 4 processors
 make install
+
+Note: that's to compile in parallel with 4 processors
+
 
 3. Path and Test
 
@@ -79,6 +81,7 @@ make install
 gedit ~/.bashrc
 
 Note: add the following lines to .bashrc
+
 export PATH=$PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/test
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/lib
 export PYTHONPATH=$PYTHONPATH:~/DAKOTA/dakota_installation/share/dakota/Python
