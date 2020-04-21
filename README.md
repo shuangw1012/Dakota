@@ -29,10 +29,15 @@ tar -xzf dakota-6.10-release-public.src.tar.gz
 1.3 create the build and installation folder
 
 mkdir dakota_build
+
 mkdir dakota_installation
+
 export DAK_BUILD=$HOME/DAKOTA/dakota_build
+
 export DAK_INSTALL=$HOME/DAKOTA/dakota_installation
+
 export DAK_SRC=$HOME/DAKOTA/dakota-6.10.0.src
+
 cd $DAK_BUILD 
 
 **if no parallel computing is needed, skip step 1.4 and 1.5.
@@ -45,11 +50,9 @@ cp $DAK_SRC/cmake/BuildDakotaTemplate.cmake $DAK_SRC/cmake/BuildDakotaCustom.cma
 Open the file BuildDakotaCustom.cmake from DAK_SRC/cmake
 Add the following lines to BuildDakotaCustom.cmake below line 69:
 
-set( DAKOTA_HAVE_MPI ON
-     CACHE BOOL "Always build with MPI enabled" FORCE)
-set( MPI_CXX_INCLUDE_PATH
-     "/path/to/MPI/include"
-     CACHE FILEPATH "Use installed MPI headers" FORCE)
+set( DAKOTA_HAVE_MPI ON CACHE BOOL "Always build with MPI enabled" FORCE)
+     
+set( MPI_CXX_INCLUDE_PATH "/path/to/MPI/include" CACHE FILEPATH "Use installed MPI headers" FORCE)
 
 "/path/to/MPI/include" can be found with command: mpicxx --showme, for example, on my Desktop, the path is "/usr/lib/x86_64-linux-gnu/openmpi/include"
 
@@ -84,7 +87,9 @@ gedit ~/.bashrc
 Note: add the following lines to .bashrc
 
 export PATH=$PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/test
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/lib
+
 export PYTHONPATH=$PYTHONPATH:~/DAKOTA/dakota_installation/share/dakota/Python
 
 3.2 Test build
