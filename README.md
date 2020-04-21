@@ -86,11 +86,13 @@ gedit ~/.bashrc
 
 Note: add the following lines to .bashrc
 
-export PATH=$PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/test
+export PATH=$PATH:/pathtoDAKOTA/dakota_installation/bin:/pathtoDAKOTA/dakota_installation/test
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/pathtoDAKOTA/dakota_installation/bin:/pathtoDAKOTA/dakota_installation/lib
 
-export PYTHONPATH=$PYTHONPATH:~/DAKOTA/dakota_installation/share/dakota/Python
+export PYTHONPATH=$PYTHONPATH:/pathtoDAKOTA/dakota_installation/share/dakota/Python
+
+'/pathtoDAKOTA/'needs to be updated to the Dakota path. For example, in my case, the path is '~/DAKOTA'.
 
 3.2 Test build
 
