@@ -43,7 +43,7 @@ cp $DAK_SRC/cmake/BuildDakotaTemplate.cmake $DAK_SRC/cmake/BuildDakotaCustom.cma
 
 1.5 Setting the mpi path to Dakota. The default setting is to turn off the mpi link, which is very annoying!!!!!
 Open the file BuildDakotaCustom.cmake from DAK_SRC/cmake
-Add the following lines to BuildDakotaCustom.cmake:
+Add the following lines to BuildDakotaCustom.cmake below line 69:
 
 set( DAKOTA_HAVE_MPI ON 
      CACHE BOOL "Always build with MPI enabled" FORCE)
@@ -83,9 +83,9 @@ gedit ~/.bashrc
 
 Note: add the following lines to .bashrc
 
-export PATH=$PATH: ~/DAKOTA/dakota_installation/bin: ~/DAKOTA/dakota_installation/test
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH: ~/DAKOTA/dakota_installation/bin: ~/DAKOTA/dakota_installation/lib
-export PYTHONPATH=$PYTHONPATH: ~/DAKOTA/dakota_installation/share/dakota/Python
+export PATH=$PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/test
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/DAKOTA/dakota_installation/bin:~/DAKOTA/dakota_installation/lib
+export PYTHONPATH=$PYTHONPATH:~/DAKOTA/dakota_installation/share/dakota/Python
 
 3.2 Test build
 
