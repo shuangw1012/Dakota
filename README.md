@@ -45,7 +45,7 @@ cp $DAK_SRC/cmake/BuildDakotaTemplate.cmake $DAK_SRC/cmake/BuildDakotaCustom.cma
 Open the file BuildDakotaCustom.cmake from DAK_SRC/cmake
 Add the following lines to BuildDakotaCustom.cmake below line 69:
 
-set( DAKOTA_HAVE_MPI ON 
+set( DAKOTA_HAVE_MPI ON
      CACHE BOOL "Always build with MPI enabled" FORCE)
 set( MPI_CXX_INCLUDE_PATH
      "/path/to/MPI/include"
