@@ -8,7 +8,7 @@ This repository is a reference for interfacing Dakota with a python code for opt
 
 A rosenbrock function is used to test the capability of the methods. Each of the optimisation can be run with a command 'dakota -i *.in' after installation of Dakota.
 
-# A guidance for installing Dakota with compiling from source(in Ubuntu system)
+# A guidance for installing Dakota from source(in Ubuntu system)
 
 1. Preparation:
 
